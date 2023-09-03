@@ -2,11 +2,12 @@ import { getEventContent } from './eventFunctions.js';
 
 document.addEventListener('DOMContentLoaded', function ()
 {
-    const calendarNames = ['one', 'two', 'tree', 'four', 'five', 'six'];
+    const calendarEls = [];
+const calendarNames = ['one', 'two', 'tree', 'four', 'five', 'six'];
 
-    for (let i = 0; i < calendarNames.length; i++) {
-    calendarEls[i] = document.getElementById(`${calendarNames[i]}-calendar`);
-    }
+for (let i = 0; i < calendarNames.length; i++) {
+  calendarEls[i] = document.getElementById(`${calendarNames[i]}-calendar`);
+}
 
 
     function createCalendar(calendarEl, place, FullCalendar)
@@ -74,12 +75,23 @@ document.addEventListener('DOMContentLoaded', function ()
         return calendar;
     }
 
-    const salaNames = ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6'];
+    let calendar1 = createCalendar(calendarEl1, 'Sala 1', FullCalendar);
+    let calendar2 = createCalendar(calendarEl2, 'Sala 2', FullCalendar);
+    let calendar3 = createCalendar(calendarEl3, 'Sala 3', FullCalendar);
+    let calendar4 = createCalendar(calendarEl4, 'Sala 4', FullCalendar);
+    let calendar5 = createCalendar(calendarEl5, 'Sala 5', FullCalendar);
+    let calendar6 = createCalendar(calendarEl6, 'Sala 6', FullCalendar);
 
-    for (let i = 0; i < salaNames.length; i++) {
-      calendars[i] = createCalendar(calendarEls[i], salaNames[i], FullCalendar);
-      calendars[i].render();
-    }
+
+    calendar1.render();
+    calendar2.render();
+    calendar3.render();
+    calendar3.render();
+    calendar4.render();
+    calendar5.render();
+    calendar6.render();
+
+
 
     // Evento de clique em uma data do calend�rio
     calendar1.setOption('dateClick', function (info)

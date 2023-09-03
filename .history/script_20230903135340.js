@@ -2,12 +2,24 @@ import { getEventContent } from './eventFunctions.js';
 
 document.addEventListener('DOMContentLoaded', function ()
 {
-    const calendarNames = ['one', 'two', 'tree', 'four', 'five', 'six'];
-
-    for (let i = 0; i < calendarNames.length; i++) {
-    calendarEls[i] = document.getElementById(`${calendarNames[i]}-calendar`);
-    }
-
+    let calendarEl1 = document.getElementById('one-calendar');
+    let calendarEl2 = document.getElementById('two-calendar');
+    let calendarEl3 = document.getElementById('tree-calendar');
+    let calendarEl4 = document.getElementById('four-calendar');
+    let calendarEl5 = document.getElementById('five-calendar');
+    let calendarEl6 = document.getElementById('six-calendar');
+    
+    const eventInfo = {
+        event: {
+          extendedProps: {
+            discipline: 'Matemática',
+            mentor: 'João',
+            student: 'Maria',
+            beginEvent: '10:00',
+            endEvent: '11:00'
+          }
+        }
+      };
 
     function createCalendar(calendarEl, place, FullCalendar)
     {
@@ -74,12 +86,23 @@ document.addEventListener('DOMContentLoaded', function ()
         return calendar;
     }
 
-    const salaNames = ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6'];
+    let calendar1 = createCalendar(calendarEl1, 'Sala 1', FullCalendar);
+    let calendar2 = createCalendar(calendarEl2, 'Sala 2', FullCalendar);
+    let calendar3 = createCalendar(calendarEl3, 'Sala 3', FullCalendar);
+    let calendar4 = createCalendar(calendarEl4, 'Sala 4', FullCalendar);
+    let calendar5 = createCalendar(calendarEl5, 'Sala 5', FullCalendar);
+    let calendar6 = createCalendar(calendarEl6, 'Sala 6', FullCalendar);
 
-    for (let i = 0; i < salaNames.length; i++) {
-      calendars[i] = createCalendar(calendarEls[i], salaNames[i], FullCalendar);
-      calendars[i].render();
-    }
+
+    calendar1.render();
+    calendar2.render();
+    calendar3.render();
+    calendar3.render();
+    calendar4.render();
+    calendar5.render();
+    calendar6.render();
+
+
 
     // Evento de clique em uma data do calend�rio
     calendar1.setOption('dateClick', function (info)
