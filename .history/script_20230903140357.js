@@ -80,11 +80,14 @@ document.addEventListener('DOMContentLoaded', function ()
       calendars[i].render();
     }
 
-    for (let i = 0; i < salaNames.length; i++) {
+    // Evento de clique em uma data do calend�rio
+    calendar1.setOption('dateClick', function (info)
+    {for (let i = 0; i < salaNames.length; i++) {
         calendars[i].setOption('dateClick', function(info) {
           handleDateClick(info, salaNames[i]);
         });
       }
+    });     
 
     // Fun��o para lidar com o clique em uma data
     function handleDateClick(info, place)

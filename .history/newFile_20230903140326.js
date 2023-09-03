@@ -1,15 +1,13 @@
 import { getEventContent } from './eventFunctions.js';
 
-document.addEventListener('DOMContentLoaded', function ()
-{
+document.addEventListener('DOMContentLoaded', function () {
     const calendarNames = ['one', 'two', 'tree', 'four', 'five', 'six'];
 
     for (let i = 0; i < calendarNames.length; i++) {
-    calendarEls[i] = document.getElementById(`${calendarNames[i]}-calendar`);
+        calendarEls[i] = document.getElementById(`${calendarNames[i]}-calendar`);
     }
 
-    function createCalendar(calendarEl, place, FullCalendar)
-    {
+    function createCalendar(calendarEl, place, FullCalendar) {
         let dataAtual = new Date();
         let ano = dataAtual.getFullYear();
         let mes = ("0" + (dataAtual.getMonth() + 1)).slice(-2);
@@ -31,14 +29,11 @@ document.addEventListener('DOMContentLoaded', function ()
                 {
                     url: 'http://difiores-001-site3.etempurl.com/api/Agenda',
 
-                    success: function (data)
-                    {
-                        let events = data.filter(function (event)
-                        {
+                    success: function (data) {
+                        let events = data.filter(function (event) {
                             return event.place === place;
                         });
-                        events.forEach(event =>
-                        {
+                        events.forEach(event => {
                             event.beginEvent = event.start;
                             event.endEvent = event.end;
                             delete event.start;
@@ -48,11 +43,9 @@ document.addEventListener('DOMContentLoaded', function ()
                         // guardamos os ids em uma v�riavel e usamos o m�todo has para verificar exist�ncia do id no json
                         // caso n�o exista ele ser� adicionado 
                         // e em seguida chamamos a o m�todo addEventSource para montar o calend�rio na tela. 
-                        events.forEach(function (event)
-                        {
+                        events.forEach(function (event) {
                             let eventId = event.id;
-                            if (!uniqueEvents.has(eventId))
-                            {
+                            if (!uniqueEvents.has(eventId)) {
                                 uniqueEvents.add(eventId);
                                 calendar.addEventSource(event);
                             }
@@ -60,12 +53,10 @@ document.addEventListener('DOMContentLoaded', function ()
                     }
                 }
             ],
-            eventLeave: function (info)
-            {
+            eventLeave: function (info) {
                 console.log('event left!', info.event);
             },
-            dateClick: function (info)
-            {
+            dateClick: function (info) {
                 setSelectedDay(info.date);
             }
         });
@@ -76,19 +67,21 @@ document.addEventListener('DOMContentLoaded', function ()
     const salaNames = ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6'];
 
     for (let i = 0; i < salaNames.length; i++) {
-      calendars[i] = createCalendar(calendarEls[i], salaNames[i], FullCalendar);
-      calendars[i].render();
+        calendars[i] = createCalendar(calendarEls[i], salaNames[i], FullCalendar);
+        calendars[i].render();
     }
 
-    for (let i = 0; i < salaNames.length; i++) {
-        calendars[i].setOption('dateClick', function(info) {
-          handleDateClick(info, salaNames[i]);
-        });
-      }
+    // Evento de clique em uma data do calend�rio
+    calendar1.setOption('dateClick', function (info) {
+        for (let i = 0; i < salaNames.length; i++) {
+            calendars[i].setOption('dateClick', function (info) {
+                handleDateClick(info, salaNames[i]);
+            });
+        }
+    });
 
     // Fun��o para lidar com o clique em uma data
-    function handleDateClick(info, place)
-    {
+    function handleDateClick(info, place) {
         let selectedDate = moment(info.date).format('YYYY-MM-DD'); // Formate a data selecionada usando moment.js
         let isWeeklyOrMonthly = info.view.type !== 'dayGridDay';
 
@@ -106,4 +99,3 @@ document.addEventListener('DOMContentLoaded', function ()
         window.location.href = '/indexTest.html?data=' + jsonDataString;
     }
 });
-
