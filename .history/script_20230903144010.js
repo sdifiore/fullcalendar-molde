@@ -1,6 +1,5 @@
 import { createCalendar } from './calendar.js';
 import { handleDateClick } from './handleDateClick.js';
-import { getCalendarElements } from './getCalendarElements.js';
 import { createAndRenderCalendars } from './createAndRenderCalendars.js';
 
 
