@@ -117,18 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
     handleDateClick(info, 'Sala 3');
   });
 
-  calendar4.setOption('dateClick', function(info) {
-    handleDateClick(info, 'Sala 4');
-  });
-
-  calendar5.setOption('dateClick', function(info) {
-    handleDateClick(info, 'Sala 5');
-  });
-
-  calendar6.setOption('dateClick', function(info) {
-    handleDateClick(info, 'Sala 6');
-  });
-
   // Função para lidar com o clique em uma data
   function handleDateClick(info, place) {
     var selectedDate = moment(info.date).format('YYYY-MM-DD'); // Formate a data selecionada usando moment.js
