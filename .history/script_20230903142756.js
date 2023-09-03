@@ -1,7 +1,7 @@
 import { createCalendar } from './calendar.js';
 import { handleDateClick } from './handleDateClick.js';
 import { getEventContent } from './eventFunctions.js';
-import { getCalendarElements } from './createAndRenderCalendars.js';
+import { getCalendarElements } from './calendarNames.js';
 
 
 document.addEventListener('DOMContentLoaded', function ()
