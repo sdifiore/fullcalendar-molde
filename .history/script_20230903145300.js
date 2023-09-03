@@ -6,6 +6,8 @@ import { createAndRenderCalendars } from './createAndRenderCalendars.js';
 document.addEventListener('DOMContentLoaded', function ()
 {
     const calendarEls = getCalendarElements(calendarNames);
+    
+    const salaNames = ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6'];
     const calendars = createAndRenderCalendars(calendarEls, salaNames, FullCalendar);
 
     for (let i = 0; i < salaNames.length; i++) {
