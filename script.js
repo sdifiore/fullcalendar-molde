@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function ()
     var calendarEl5 = document.getElementById('five-calendar');
     var calendarEl6 = document.getElementById('six-calendar');
 
-    const selectedDayElement = document.getElementById('selectedDay'); //////////
+    const selectedDayElement = document.getElementById('selectedDay');
 
     function getEventContent(eventInfo)
     {
