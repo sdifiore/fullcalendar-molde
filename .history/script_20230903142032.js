@@ -1,5 +1,4 @@
 import { createCalendar } from './calendar.js';
-import { handleDateClick } from './handleDateClick.js';
 
 document.addEventListener('DOMContentLoaded', function ()
 {
