@@ -1,5 +1,3 @@
-import { getEventContent } from './eventFunctions.js';
-
 document.addEventListener('DOMContentLoaded', function ()
 {
     let calendarEl1 = document.getElementById('one-calendar');
@@ -9,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function ()
     let calendarEl5 = document.getElementById('five-calendar');
     let calendarEl6 = document.getElementById('six-calendar');
 
+    
 
     function createCalendar(calendarEl, place, FullCalendar)
     {
