@@ -1,5 +1,3 @@
-// import 'test' from './tratamentos';
-
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl1 = document.getElementById('one-calendar');
   var calendarEl2 = document.getElementById('two-calendar');
@@ -8,11 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendarEl5 = document.getElementById('five-calendar');
   var calendarEl6 = document.getElementById('six-calendar');
 
-// variável com a função para setar.
-  // var uniqueEvents = new Set();
-
   const selectedDayElement = document.getElementById('selectedDay'); //////////
-
 
   function getEventContent(eventInfo) {
     var event = eventInfo.event;
