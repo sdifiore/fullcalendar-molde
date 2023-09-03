@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function ()
     let calendarEl5 = document.getElementById('five-calendar');
     let calendarEl6 = document.getElementById('six-calendar');
 
+    
+
     function createCalendar(calendarEl, place, FullCalendar)
     {
         let dataAtual = new Date();
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function ()
         let mes = ("0" + (dataAtual.getMonth() + 1)).slice(-2);
         let dia = ("0" + dataAtual.getDate()).slice(-2);
         let dataFormatada = ano + "-" + mes + "-" + dia;
+
 
         let calendar = new FullCalendar.Calendar(calendarEl, {
             headerToolbar: {
