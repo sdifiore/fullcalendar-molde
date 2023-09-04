@@ -55,5 +55,7 @@
     "váriavel",
     "verificar",
     "Você"
-  ]
+  ],
+  "editor.tabCompletion": "on",
+  "prettier.tabWidth": 4
 }
