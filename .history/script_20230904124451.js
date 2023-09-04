@@ -3,6 +3,8 @@ import { handleDateClick } from './handleDateClick.js';
 import { getCalendarElements } from './getCalendarElements.js';
 import { createAndRenderCalendars } from './createAndRenderCalendars.js';
 
+const selectedDayElement = document.getElementById('selectedDate');
+
 document.addEventListener('DOMContentLoaded', function ()
 {
     const calendarEls = getCalendarElements(calendarNames);
