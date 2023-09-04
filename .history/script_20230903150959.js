@@ -6,9 +6,6 @@ import { createAndRenderCalendars } from './createAndRenderCalendars.js';
 document.addEventListener('DOMContentLoaded', function ()
 {
     const calendarEls = getCalendarElements(calendarNames);
-
-    const selectedDayElement = document.getElementById('selectedDay');
-
     const calendars = createAndRenderCalendars(calendarEls, salaNames, FullCalendar);
 
     for (let i = 0; i < salaNames.length; i++) {

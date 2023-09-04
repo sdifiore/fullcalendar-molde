@@ -2,13 +2,13 @@ import { createCalendar } from './calendar.js';
 import { handleDateClick } from './handleDateClick.js';
 import { getCalendarElements } from './getCalendarElements.js';
 import { createAndRenderCalendars } from './createAndRenderCalendars.js';
+import { getEventContent } from './getEventContent.js';
 
 document.addEventListener('DOMContentLoaded', function ()
 {
     const calendarEls = getCalendarElements(calendarNames);
-
     const selectedDayElement = document.getElementById('selectedDay');
-
+    getEventContent(selectedDayElement, FullCalendar); 
     const calendars = createAndRenderCalendars(calendarEls, salaNames, FullCalendar);
 
     for (let i = 0; i < salaNames.length; i++) {
