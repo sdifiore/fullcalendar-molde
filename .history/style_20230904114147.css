@@ -54,11 +54,11 @@ body {
   margin: 20px 0;
 }
 
-.calendar-wrapper {
+/* .calendar-wrapper {
   flex: 0 0 calc(33.33% - 20px); /* Adjust the percentage as needed */
   margin: 10px;
   box-sizing: border-box;
-}
+} */
 
 @media (max-width: 768px) {
   .calendar-wrapper {
