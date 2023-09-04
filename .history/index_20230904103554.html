@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="/index.global.js"></script>
+  <script src="fullcalendar-6.1.8/packages/core/locales/pt-br.global.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Agenda</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <!-- Primeira Linha -->
+	<div class="row">
+		<div class="col-12 col-md-4 calendar-wrapper">
+			<div class="calendar-wrapper">
+				<div class="calendar-label">Sala 1</div>
+					<div id="one-calendar"></div>
+				</div>
+		<div class="col-12 col-md-4 calendar-wrapper">
+			<div class="calendar-wrapper">
+				<div class="calendar-label">Sala 2</div>
+					<div id="two-calendar"></div>
+				</div>
+		<div class="col-12 col-md-4 calendar-wrapper">
+			<div class="calendar-wrapper">
+				<div class="calendar-label">Sala 3</div>
+					<div id="three-calendar"></div>
+				</div>
+		</div>
+
+	<!-- Segunda Linha -->
+	<div class="row">
+		<div class="col-12 col-md-4 calendar-wrapper">
+			<div class="calendar-wrapper">
+				<div class="calendar-label">Sala 4</div>
+					<div id="four-calendar"></div>
+				</div>
+	<div class="row">
+		<div class="col-12 col-md-4 calendar-wrapper">
+			<div class="calendar-wrapper">
+				<div class="calendar-label">Sala 5</div>
+					<div id="five-calendar"></div>
+				</div>
+	<div class="row">
+			<div class="col-12 col-md-4 calendar-wrapper">
+				<div class="calendar-wrapper">
+					<div class="calendar-label">Sala 5</div>
+						<div id="six-calendar"></div>
+					</div>				
+				</div>
+				</div>
+				</div>
+  </div>
+
+  <p>Dia clicado: <span id="selectedDay"></span></p>
+
+  <script src="script.js"></script>
+  <script src="tratamentos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="fullcalendar-6.1.8/packages/core/main.js"></script> 
